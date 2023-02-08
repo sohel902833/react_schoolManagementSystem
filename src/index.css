@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.__sidebar_active_item {
+  background-color: red !important;
+}
