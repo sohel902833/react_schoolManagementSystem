@@ -16,6 +16,12 @@ interface Props {
     shitId: string,
     position: number
   ) => void;
+  handleUpdateResultShitTotalMark: (
+    studentId: string,
+    batchId: string,
+    shitId: string,
+    totalMark: string
+  ) => void;
   updatedResultShit: any;
   shitId: string;
 }
@@ -24,6 +30,7 @@ const StudentResultShitItem = ({
   student,
   handleUpdateResultShitGpa,
   handleUpdateResultShitPosition,
+  handleUpdateResultShitTotalMark,
   updatedResultShit,
 }: Props) => {
   const { batchList, classList, resultList } = useWrapper();
@@ -52,7 +59,10 @@ const StudentResultShitItem = ({
 
       <h2 className="dark:text-white text-xl">Class: {getClassName()}</h2>
       <h2 className="dark:text-white text-xl">
-        Gpa:{" "}
+        Total Mark: {studentResult?.totalMark}
+      </h2>
+      <h2 className="dark:text-white text-xl">
+        Got Mark:{" "}
         <label className="text-purple-700 font-bold">
           {studentResult?.gpa}
         </label>{" "}
@@ -61,41 +71,52 @@ const StudentResultShitItem = ({
           {studentResult?.position}
         </label>
       </h2>
-      <div className="flex items-center gap-2">
-        <div className="flex-[1]">
-          <TextInput
-            label="Position/Roll"
-            placeholder="Enter Position/Roll"
-            value={updatedResultShit[student?.studentId + shitId]?.position}
-            onChange={(e: any) =>
-              handleUpdateResultShitPosition(
-                student?.studentId,
-                student?.batchId,
-                shitId,
-                e.target.value
-              )
-            }
-            error={""}
-            type="number"
-          />
-        </div>
-        <div className="flex-[1]">
-          <TextInput
-            label="Gpa"
-            placeholder="Enter Gpa"
-            value={updatedResultShit[student?.studentId + shitId]?.gpa}
-            onChange={(e: any) =>
-              handleUpdateResultShitGpa(
-                student?.studentId,
-                student?.batchId,
-                shitId,
-                e.target.value
-              )
-            }
-            error={""}
-            type="number"
-          />
-        </div>
+      <div className="flex flex-col  gap-2">
+        <TextInput
+          label="Position/Roll"
+          placeholder="Enter Position/Roll"
+          value={updatedResultShit[student?.studentId + shitId]?.position}
+          onChange={(e: any) =>
+            handleUpdateResultShitPosition(
+              student?.studentId,
+              student?.batchId,
+              shitId,
+              e.target.value
+            )
+          }
+          error={""}
+          type="number"
+        />
+        <TextInput
+          label="Got Mark"
+          placeholder="Got Mark"
+          value={updatedResultShit[student?.studentId + shitId]?.gpa}
+          onChange={(e: any) =>
+            handleUpdateResultShitGpa(
+              student?.studentId,
+              student?.batchId,
+              shitId,
+              e.target.value
+            )
+          }
+          error={""}
+          type="number"
+        />
+        <TextInput
+          label="Total Mark"
+          placeholder="Total Mark"
+          value={updatedResultShit[student?.studentId + shitId]?.totalMark}
+          onChange={(e: any) =>
+            handleUpdateResultShitTotalMark(
+              student?.studentId,
+              student?.batchId,
+              shitId,
+              e.target.value
+            )
+          }
+          error={""}
+          type="number"
+        />
       </div>
     </div>
   );

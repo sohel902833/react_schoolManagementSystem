@@ -8,6 +8,7 @@ import ClassPage from "./pages/ClassPage";
 import EditShitResult from "./pages/EditShitResult";
 import Home from "./pages/Home";
 import Notice from "./pages/Notice";
+import OnlineAdmit from "./pages/OnlineAdmit";
 import Result from "./pages/Result";
 import SliderPage from "./pages/SliderPage";
 import Students from "./pages/Students";
@@ -23,12 +24,12 @@ import UserNoticePage from "./pages/user-page/UserNoticePage";
 import UserStudentResult from "./pages/user-page/UserStudentResult";
 import UserTeachersPage from "./pages/user-page/UserTeachersPage";
 function App() {
+  console.log("App");
   return (
     <WrapperProvider>
       <Router>
         <Routes>
           <Route path="/admin" element={<Home />}>
-            {/* <Route path="/" element={<BasicInfo />} /> */}
             <Route path="notice" element={<Notice />} />
             <Route path="result" element={<Result />} />
             <Route path="students" element={<Students />} />
@@ -36,6 +37,7 @@ function App() {
             <Route path="batch" element={<BatchPage />} />
             <Route path="class" element={<ClassPage />} />
             <Route path="slider" element={<SliderPage />} />
+            <Route path="online-admit" element={<OnlineAdmit />} />
             <Route
               path="activity-management"
               element={<ActivityManagement />}

@@ -19,7 +19,7 @@ const AttendanceReport = () => {
   };
   return (
     <>
-      <h1 className="container mx-auto font-extrabold text-2xl mt-10 bg-blue-500 p-4 text-white dark:bg-slate-800">
+      <h1 className="mb-[40px] sm:mb-0 container mx-auto font-extrabold text-2xl mt-10 bg-blue-500 p-4 text-white dark:bg-slate-800">
         Attendance
       </h1>
       <br />

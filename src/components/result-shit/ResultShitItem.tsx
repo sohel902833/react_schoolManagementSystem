@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useWrapper } from "../../context/DataWrapper";
 import { IResultShit } from "../../types/batch.types";
@@ -27,12 +28,14 @@ const ResultShitItem = ({
   return (
     <>
       <div className="cursor-pointer flex flex-col gap-2  grow  rounded-md p-4 basis-80 relative shadow-lg bg-white dark:bg-slate-800">
-        <h2
-          onClick={navigateToEditResultShit}
-          className="text-2xl  hover:bg-slate-300 font-semibold dark:text-white"
-        >
-          {resultShit?.name}
-        </h2>
+        <Link to={`/admin/result/shit/${resultShit?.resultShitId}`}>
+          <h2
+            onClick={navigateToEditResultShit}
+            className="text-2xl  hover:bg-slate-300 font-semibold dark:text-white"
+          >
+            {resultShit?.name}
+          </h2>
+        </Link>
         <h2 className="text-xl dark:text-white">Class: {getClassName()}</h2>
         <h2 className="text-xl dark:text-white">
           Published At:{" "}
@@ -40,7 +43,6 @@ const ResultShitItem = ({
         </h2>
 
         <button
-          onClick={() => handleDeleteResultShit(resultShit, true)}
           className={`w-[120px] px-7 py-2 rounded-md text-slate-50 font-extrabold ${
             resultShit?.status === "pending"
               ? "bg-red-600  hover:bg-red-500"

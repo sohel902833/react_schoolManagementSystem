@@ -19,6 +19,8 @@ const LandingPage = () => {
     }
     return 0;
   };
+
+  console.log("HOME page");
   return (
     <div className="max-w-7xl mx-auto">
       <div className="container mt-5 mx-auto flex flex-col sm:flex-col md:flex-row gap-5">

@@ -18,6 +18,8 @@ export interface IResult {
   shitId: string;
   position: string;
   gpa: string;
+  totalMark: string;
+  comment: string;
 }
 
 export interface IBasicInfo {

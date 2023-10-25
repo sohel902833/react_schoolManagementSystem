@@ -71,12 +71,12 @@ const ContactUs = () => {
   };
   return (
     <>
-      <h1 className="container mx-auto font-extrabold text-2xl mt-10 bg-blue-500 p-4 text-white dark:bg-slate-800">
+      <h1 className="mb-[140px] md:mb-0  container mx-auto font-extrabold text-2xl mt-10 bg-blue-500 p-4 text-white dark:bg-slate-800">
         Contact
       </h1>
       <div className="h-screen container mt-5 mx-auto flex flex-col-reverse md:flex-row gap-5 sm:flex-col-reverse">
         <div className="flex-[3] mb-10">
-          <div className="w-[60%]">
+          <div className="w-full md:w-[60%]">
             <form onSubmit={handleSubmit}>
               <TextInput
                 label="Name"

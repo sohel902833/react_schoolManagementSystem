@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { BsMoon, BsFillSunFill } from "react-icons/bs";
+import { useWrapper } from "../../context/DataWrapper";
 const Header = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const { basicInfo } = useWrapper();
   const toggleDarkMode = () => {
     if (localStorage.getItem("theme") === "dark") {
       document.documentElement.classList.remove("dark");
@@ -25,7 +27,7 @@ const Header = () => {
     <div className="dark:bg-slate-700 flex py-2 xs:px-5 px-20 justify-between items-center bg-white shadow-lg">
       <div>
         <h2 className="text-lg font-medium dark:text-white">
-          Modern Simple CMS
+          Admin Panel Of {basicInfo?.instituteName}
         </h2>
       </div>
       <div>

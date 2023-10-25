@@ -139,6 +139,8 @@ export function WrapperProvider({ children }: any) {
                 ...dataSnapshot?.Results[id],
               });
             }
+            console.log("Here");
+            console.log("Batch", newBatchList);
             setBatchList(newBatchList);
             setClassList(newClassList);
             setStudentList(newStudentList);
@@ -156,6 +158,8 @@ export function WrapperProvider({ children }: any) {
         });
       } catch (err) {
         setLoading(false);
+      }finally{
+        setLoading(false)
       }
     }
     fetchData();

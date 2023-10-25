@@ -11,6 +11,8 @@ const apiKey = {
   measurementId: import.meta.env.VITE_APP_MESAURMENT_ID,
   databaseURL: import.meta.env.VITE_APP_DATABASE_URL,
 };
+
+console.log("Api Key",apiKey)
 const app = initializeApp(apiKey);
 export const db = getDatabase(app);
 

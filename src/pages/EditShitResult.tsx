@@ -12,6 +12,7 @@ const EditShitResult = () => {
   const [updatedResultShit, setUpdatedResultShit] = useState<any>({});
   const [resultShitLoading, setResultShitLoading] = useState<boolean>(false);
   const db = getDatabase();
+
   const handleUpdateResultShitPosition = (
     studentId: string,
     batchId: string,
@@ -45,6 +46,24 @@ const EditShitResult = () => {
         batchId,
         shitId,
         gpa,
+      },
+    }));
+  };
+  const handleUpdateResultShitTotalMark = (
+    studentId: string,
+    batchId: string,
+    shitId: string,
+    totalMark: string
+  ) => {
+    setUpdatedResultShit((prev: any) => ({
+      ...prev,
+      [studentId + shitId]: {
+        ...prev[studentId + shitId],
+        resultId: studentId + shitId,
+        studentId,
+        batchId,
+        shitId,
+        totalMark,
       },
     }));
   };
@@ -86,6 +105,7 @@ const EditShitResult = () => {
               student={item}
               handleUpdateResultShitGpa={handleUpdateResultShitGpa}
               handleUpdateResultShitPosition={handleUpdateResultShitPosition}
+              handleUpdateResultShitTotalMark={handleUpdateResultShitTotalMark}
               updatedResultShit={updatedResultShit}
               shitId={shitId as string}
             />

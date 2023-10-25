@@ -36,6 +36,10 @@ const menues: any[] = [
     name: "Activity Management",
     link: "/admin/activity-management",
   },
+  {
+    name: "Admit Requests",
+    link: "/admin/online-admit",
+  },
 ];
 
 const activeStyle = {
